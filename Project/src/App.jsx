@@ -1,8 +1,11 @@
 import React from 'react'
+import fetchImages from './api/mediaApi'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+          <button onClick={fetchImages}>Topa Lola</button>
+    </div>
   )
 }
 
