@@ -23,3 +23,18 @@ body{
     height: 35px;
     font-family: Arial, Helvetica, sans-serif;
 }
+.tabs{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.tabs button{
+    width: 100px;
+    height: 30px;
+}
+.active{
+    background-color: skyblue;
+}
+.non-active{
+    background-color: rebeccapurple;
+}
