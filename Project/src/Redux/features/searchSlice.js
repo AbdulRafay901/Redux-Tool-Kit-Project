@@ -38,7 +38,7 @@ const searchSlice = createSlice({
 })
 
 
-export const {
+export let {
 
     setQuery,
     setActiveTab,
