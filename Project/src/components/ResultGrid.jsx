@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import fetchPhotos, { fetchVideos } from '../api/mediaApi'
 import { useEffect } from 'react'
 import { setError, setResults, setLoading} from '../Redux/features/searchSlice'
-
+import ResultCard from './ResultCard'
 
 const ResultGrid = () => {
 
@@ -26,7 +26,8 @@ const ResultGrid = () => {
                   type: 'photo',
                   title: item.alt_description,
                   thumbnail: item.urls.small,
-                  src: item.urls.full
+                  src: item.urls.full,
+                  a: item.links.html
             }));
         }
 
@@ -59,11 +60,11 @@ const ResultGrid = () => {
      if(loading) return <h1>Loading...</h1>
 
   return (
-    <div style={{color:'white'}}>
+    <div className='main'>
           {results.map((item, idx) => (
-              <div key={idx}>
-                   <h1>{item.title}</h1>
-              </div>
+               <div key={idx} className='card'>
+                     <ResultCard key={idx} item={item}/>
+               </div>
           ))}
     </div>
   )
