@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-export async function fetchImages($category){
+export async function fetchPhotos($category){
 
     const apikey = import.meta.env.VITE_UNSPLASH_KEY;
 
@@ -10,10 +10,10 @@ export async function fetchImages($category){
         headers:{Authorization: `Client-ID ${apikey}`}
     })
 
-    console.log(res.data)
+    return res.data
 }
 
-export default fetchImages
+export default fetchPhotos
 
 
 export async function fetchVideos(queryText){
@@ -28,6 +28,6 @@ export async function fetchVideos(queryText){
         }
     })
 
-    console.log(res.data)
+    return res.data.videos
 }
 
