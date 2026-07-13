@@ -10,8 +10,6 @@ export async function fetchPhotos($category){
         headers:{Authorization: `Client-ID ${apikey}`}
     })
 
-    console.log(res.data)
-
     return res.data
 }
 
