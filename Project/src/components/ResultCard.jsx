@@ -1,5 +1,5 @@
 import React from 'react'
-import { addtoCollection } from '../Redux/features/collectionSlice'
+import { addtoCollection, addtoToast } from '../Redux/features/collectionSlice'
 import { useDispatch } from 'react-redux'
 
 const ResultCard = ({item}) => {
@@ -9,6 +9,8 @@ const ResultCard = ({item}) => {
   const collection = (item) => {
 
       dispatch(addtoCollection(item))
+
+      dispatch(addtoToast())
 
   }
 

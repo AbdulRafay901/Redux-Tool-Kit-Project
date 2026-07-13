@@ -1,6 +1,6 @@
 import { createAction, createSlice } from "@reduxjs/toolkit";
 import { create } from "axios";
-
+import {toast} from 'react-toastify';
 
 const initialState = {
     items: JSON.parse(localStorage.getItem('collection')) || []
@@ -18,11 +18,24 @@ const collectionSlice = createSlice({
                  state.items.push(action.payload);
                  localStorage.setItem('collection', JSON.stringify(state.items))
             }
+        },
+        addtoToast(){
+             toast('Added To Collection', {
+position: "top-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+});
         }
+       
     }
 })
 
 
-export const {addtoCollection} = collectionSlice.actions
+export const {addtoCollection, addtoToast} = collectionSlice.actions
 
 export default collectionSlice.reducer
