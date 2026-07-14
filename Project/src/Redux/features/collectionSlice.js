@@ -30,12 +30,21 @@ const collectionSlice = createSlice({
                  progress: undefined,
                  theme: "light",
             });
+        },
+        removeItem(state, action){
+           state.items = state.items.filter(i => {
+               i.id !== action.payload.id
+           })
+
+           localStorage.setItem('collection', JSON.stringify(state.items))
+
+           
         }
        
     }
 })
 
 
-export const {addtoCollection, addtoToast} = collectionSlice.actions
+export const {addtoCollection, addtoToast, removeItem} = collectionSlice.actions
 
 export default collectionSlice.reducer

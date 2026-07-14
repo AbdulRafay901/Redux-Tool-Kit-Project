@@ -1,15 +1,16 @@
 import React from 'react'
 import ResultCard from '../components/ResultCard'
+import { useSelector } from 'react-redux'
 
 const CollectionPage = () => {
 
-    const collection = JSON.parse(localStorage.getItem('collection'))
+    const collection = useSelector((state) => state.collection.items);
 
   return (
     <div style={{color:'white'}} className='main'>
           {collection.map((item,idx) => (
                <div key={idx} className='card'>
-                   <ResultCard key={idx} item={item}/>
+                   <ResultCard key={idx} item={item} btnText={'Remove'}/>
                </div>
           ))}
     </div>

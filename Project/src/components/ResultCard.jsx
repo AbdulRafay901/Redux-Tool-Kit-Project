@@ -1,8 +1,8 @@
 import React from 'react'
-import { addtoCollection, addtoToast } from '../Redux/features/collectionSlice'
+import { addtoCollection, addtoToast, removeItem } from '../Redux/features/collectionSlice'
 import { useDispatch } from 'react-redux'
 
-const ResultCard = ({item}) => {
+const ResultCard = ({item, btnText}) => {
 
   const dispatch = useDispatch()
 
@@ -13,6 +13,10 @@ const ResultCard = ({item}) => {
       dispatch(addtoToast())
 
   }
+
+  const remove = (item) => {
+       dispatch(removeItem(item))
+  } 
 
 
   return (
@@ -25,9 +29,11 @@ const ResultCard = ({item}) => {
                   <a href={item.a}>
                       <p>{item.title}</p>
                       </a>
-                      <button onClick={() => {
+                      {btnText == 'Save' ? <button onClick={() => {
                           collection(item)
-                      }}>Save</button>
+                      }}>{btnText}</button> : <button onClick={() => {
+                          remove(item)
+                      }}>{btnText}</button>}
                 </div>
           </div>
     </div>

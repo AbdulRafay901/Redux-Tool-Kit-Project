@@ -63,7 +63,7 @@ const ResultGrid = () => {
     <div className='main'>
           {results.map((item, idx) => (
                <div key={idx} className='card'>
-                     <ResultCard key={idx} item={item}/>
+                     <ResultCard key={idx} item={item} btnText='Save'/>
                </div>
           ))}
     </div>
