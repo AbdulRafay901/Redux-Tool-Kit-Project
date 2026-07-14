@@ -2,12 +2,15 @@ import React from 'react'
 
 const CollectionPage = () => {
 
-    console.log(JSON.parse(localStorage.getItem('collection')))
-
+    const collection = JSON.parse(localStorage.getItem('collection'))
 
   return (
     <div style={{color:'white'}}>
-          <h1>Collection Page</h1>
+          {collection.map((item,idx) => (
+               <div key={idx}>
+                     
+               </div>
+          ))}
     </div>
   )
 }

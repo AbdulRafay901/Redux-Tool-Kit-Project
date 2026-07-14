@@ -1,6 +1,10 @@
 body{
     background-color: rgb(14, 20, 20);
 }
+*{
+    padding: 0;
+    margin: 0;
+}
 .search-form{
     padding: 20px;
     display: flex;
@@ -82,4 +86,16 @@ body{
     color: white;
     border: none;
     border-radius: 5px;
+}
+
+.navbar{
+    background-color: rgb(8, 58, 151);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;align-items: center;
+}
+.navbar button{
+    width: 100px;
+    height: 30px;
 }

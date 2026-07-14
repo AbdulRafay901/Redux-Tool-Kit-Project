@@ -20,7 +20,7 @@ export async function fetchVideos(queryText){
 
     const apikey = import.meta.env.VITE_PEXELS_KEY;
 
-    const res = await axios.get("https://api.pexels.com/videos/search",{
+    const res = await axios.get("",{
         headers:{Authorization: apikey},
         params: {
             query: queryText,

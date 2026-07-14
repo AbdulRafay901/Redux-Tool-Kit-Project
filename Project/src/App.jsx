@@ -7,11 +7,13 @@ import ResultGrid from './components/ResultGrid'
 import Home from './pages/Home'
 import {Routes, Route} from 'react-router-dom'
 import CollectionPage from './pages/CollectionPage'
+import Navbar from './components/Navbar'
 
 
 const App = () => {
   return (
     <div>
+         <Navbar />
          <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/collection' element={<CollectionPage />} />
