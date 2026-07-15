@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -9,9 +9,14 @@ const Navbar = () => {
         <h2>
             MediaSearch
         </h2>
+        <div>
         <button onClick={() => {
             navigate('/collection')
         }}>Collection</button>
+
+        <Link to={'/'} className='link'><button>Home</button></Link>
+
+        </div>
     </div>
   )
 }
