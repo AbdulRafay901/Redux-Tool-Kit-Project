@@ -32,7 +32,6 @@ The project focuses on efficient state management, reusable components, API hand
 
 - Search photos and videos instantly
 - Dynamic API-based results
-- Fast and responsive search experience
 - Real-time result updates
 
 ---
